@@ -11,13 +11,13 @@
   },
   "installer": {
     "script": [
-      "$installer = \"$dir\\VideoSaveHelperSetup-2.0.2.exe\"",
+      "$installer = \"$dir\\VideoSaveHelperSetup-$version.exe\"",
       "Start-Process -FilePath $installer -ArgumentList '--quiet','--no-start' -Wait"
     ]
   },
   "uninstaller": {
     "script": [
-      "$uninstaller = Join-Path $env:LOCALAPPDATA 'VideoLatchHelper\\2.0.2\\VideoLatchHelperUninstall.exe'",
+      "$uninstaller = Join-Path $env:LOCALAPPDATA \"VideoLatchHelper\\$version\\VideoLatchHelperUninstall.exe\"",
       "if (Test-Path $uninstaller) { Start-Process -FilePath $uninstaller -ArgumentList '--quiet' -Wait }"
     ]
   },
